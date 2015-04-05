@@ -8,8 +8,8 @@ var better = {};
  */
 
 better.key = function(value){
-  value
-    .replace(':', '')
+  value = value
+    .replace(String.fromCharCode(58), '')
     .replace(String.fromCharCode(160), ' ');
   return inflector.camelCase(value);
 }
