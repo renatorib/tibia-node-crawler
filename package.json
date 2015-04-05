@@ -1,0 +1,25 @@
+{
+  "name": "tibia-crawler",
+  "version": "0.1.0",
+  "description": "Tibia Crawler in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tibialand/tibia-crawler.git"
+  },
+  "author": "Renato Ribeiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tibialand/tibia-crawler/issues"
+  },
+  "homepage": "https://github.com/tibialand/tibia-crawler",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "is_js": "^0.7.3",
+    "request": "^2.55.0",
+    "require-alias": "^1.0.5"
+  }
+}
