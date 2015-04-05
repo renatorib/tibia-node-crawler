@@ -26,7 +26,7 @@ function Requester() {
 
   this.callbackWrapper = function(err, res, body) {
     if(err)
-      throw new Error('Requester ' + self.name +  ' from path ' + self.url + self.path + ' failed');
+      throw new Error('Requester ' + self.name +  ' from path ' + self.url + self.path + ' failed: ' + err);
     var data = self.Parser(body).parse();
     if(is.function(self.callback))
       return self.callback(data);
