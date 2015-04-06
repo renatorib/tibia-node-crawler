@@ -1,5 +1,3 @@
-var inflector = alias.require('@libs/inflector');
-var is = require('is_js');
 var better = {};
 
 /**
@@ -10,8 +8,19 @@ var better = {};
 better.key = function(value){
   value = value
     .replace(String.fromCharCode(58), '')
-    .replace(String.fromCharCode(160), ' ');
-  return inflector.camelCase(value);
+    .replace(String.fromCharCode(160), String.fromCharCode(32));
+  return _.camelCase(value);
+}
+
+/**
+ * Better value
+ * Transform a bad formated string in a good value name
+ */
+
+better.value = function(value){
+  return value
+    .replace(String.fromCharCode(160), String.fromCharCode(32))
+    .trim();
 }
 
 /**
@@ -21,9 +30,9 @@ better.key = function(value){
 
 better.int = function(value){
   value = value.match(/[0-9]+/g);
-  if(is.array(value) && value.length > 1)
+  if(_.isArray(value) && value.length > 1)
     value.join('');
-  if(is.array(value) && value.length === 1)
+  if(_.isArray(value) && value.length === 1)
     value = value[0];
   return parseInt(value);
 }
@@ -37,6 +46,7 @@ better.url = function(value){
   return value
     .replace(' ', '+')
     .replace('%20', '+')
+    .replace('%2B', '+');
 }
 
 /**
@@ -51,7 +61,7 @@ better.serialize = function(obj){
       return a
     },[])
     .join('&');
-  return '?' + serialized;
+  return '?' + serialized.replace('%2B', '+');
 }
 
 /**

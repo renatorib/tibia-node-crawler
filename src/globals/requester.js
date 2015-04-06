@@ -1,5 +1,4 @@
 var request = require('request');
-var is = require('is_js');
 var better = alias.require('@libs/better');
 var url = 'https://secure.tibia.com/';
 
@@ -28,7 +27,7 @@ function Requester() {
     if(err)
       throw new Error('Requester ' + self.name +  ' from path ' + self.url + self.path + ' failed: ' + err);
     var data = self.Parser(body).parse();
-    if(is.function(self.callback))
+    if(_.isFunction(self.callback))
       return self.callback(data);
     return data;
   };
@@ -153,6 +152,7 @@ Requester.prototype.request = function(){
     options.url = options.url + better.serialize(this.data);
     options.form = {};
   }
+  //console.log(options);
   return request(options, this.callbackWrapper);
 };
 

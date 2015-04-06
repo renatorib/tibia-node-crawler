@@ -1,5 +1,5 @@
 {
-  "name": "tibia-crawler",
+  "name": "tibia-node-crawler",
   "version": "0.1.0",
   "description": "Tibia Crawler in nodejs",
   "main": "index.js",
@@ -19,6 +19,7 @@
   "dependencies": {
     "cheerio": "^0.19.0",
     "is_js": "^0.7.3",
+    "lodash": "^3.6.0",
     "request": "^2.55.0",
     "require-alias": "^1.0.5"
   }

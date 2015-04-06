@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
  */
 
 function Parser(body){
-  this.$ = cheerio.load(body);
+  this.$ = cheerio.load(body, { lowerCaseTags: true, lowerCaseAttributeNames: true });
   this.data = null;
   this.parser = null;
   this.error = false;

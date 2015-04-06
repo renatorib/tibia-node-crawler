@@ -10,6 +10,16 @@ exports.loadParser = function(name){
 };
 
 /**
+ * Module Manager loadObject
+ * It is used to call object in a parser
+ */
+
+exports.loadObject = function(name){
+  return alias.require('@modules/' + name + '/object');
+};
+
+
+/**
  * Module Manager loadRequester
  * It is used to call requester in others requesters and to export
  */

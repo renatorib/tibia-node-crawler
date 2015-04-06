@@ -1,7 +1,8 @@
 var better = alias.require('@libs/better');
+var World = moduleManager.loadObject('world');
 
 /**
- * Character Parser
+ * World Parser
  */
 
 module.exports = function(body){
@@ -9,10 +10,7 @@ module.exports = function(body){
 
   WorldParser = new Parser(body)
 
-    .setData({
-      world: {},
-      playersOnline: []
-    })
+    .setData(new World())
 
     .setParser(function(){
       var self = this;
@@ -27,7 +25,7 @@ module.exports = function(body){
         .each(function() {
           var td = $(this).find('td');
           var key = better.key($(td[0]).text());
-          var value = $(td[1]).text().trim();
+          var value = better.value($(td[1]).text());
 
           switch(key){
             case 'status':
@@ -60,9 +58,9 @@ module.exports = function(body){
         .each(function() {
           var td = $(this).find('td');
           var player = {
-            name: $(td[0]).text().trim(),
+            name: better.value($(td[0]).text()),
             level: better.int($(td[1]).text()),
-            vocation: $(td[2]).text().trim()
+            vocation: better.value($(td[2]).text())
           };
 
           self.data.playersOnline.push(player);
