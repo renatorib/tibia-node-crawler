@@ -10,6 +10,7 @@ function World(){
 World.prototype.isPlayerOnline = function(name){
   return _.any(this.playersOnline, 'name', name);
 }
+World.prototype.isOnline = World.prototype.isPlayerOnline;
 
 /**
  * .getPlayerBy()
@@ -29,13 +30,14 @@ World.prototype.filterPlayersBy = function(by, value){
 }
 
 /**
- * .sortPlayersBy()
+ * .sortPlayersByAsc()
  */
 
-World.prototype.sortPlayersBy = function(by){
+World.prototype.sortPlayersByAsc = function(by){
   by = _.isArray(by) ? by : [by];
   return _.sortByAll(this.playersOnline, by) || false;
 }
+World.prototype.sortPlayersBy = World.prototype.sortPlayersByAsc;
 
 /**
  * .sortPlayersDescBy()
