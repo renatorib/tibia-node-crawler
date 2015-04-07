@@ -189,8 +189,8 @@ module.exports = function(body){
 }
 ```
 
-`Character` is a object.js from character module
-`.setData()` set a instance of object.js, which means that callback will return this object
+`Character` is a object.js from character module  
+`.setData()` set a instance of object.js, which means that callback will return this object  
 `.setParser()` here go a function that handle with a data extraction from returned html. this.$ is a cheerio instance, jquery-like: this.$('#el').text(), will extract the text from element #el, like jQuery.  
 
 ### object.js
