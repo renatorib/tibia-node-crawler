@@ -20,6 +20,14 @@ tibia.character('Hallsiny', function(data){
 
 # API Documentation
 
+## Summary
+
+* [.character()](#character)
+  * [Properties](#properties)
+* [.world()](#world)
+  * [Properties](#properties-1)
+  * [Methods](#methods)
+
 
 ## **.character()**
 ```js
