@@ -1,6 +1,6 @@
 {
   "name": "tibia-node-crawler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tibia Crawler in nodejs",
   "main": "index.js",
   "scripts": {

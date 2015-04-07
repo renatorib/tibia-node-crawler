@@ -1,4 +1,5 @@
 var better = alias.require('@libs/better');
+var Character = moduleManager.loadObject('character');
 
 /**
  * Character Parser
@@ -9,13 +10,7 @@ module.exports = function(body){
 
   CharacterParser = new Parser(body)
 
-    .setData({
-      character: {},
-      achievements: [],
-      deaths: [],
-      account: {},
-      characters: []
-    })
+    .setData(new Character())
 
     .setParser(function(){
       var self = this;

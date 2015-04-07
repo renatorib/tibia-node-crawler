@@ -1,3 +1,7 @@
+/**
+ * World Object
+ */
+
 function World(){
   this.world = {};
   this.playersOnline = [];
