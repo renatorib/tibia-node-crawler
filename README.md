@@ -21,11 +21,11 @@ tibia.character('Hallsiny', function(data){
 # API Documentation
 
 
-## **character**
+## **.character()**
 ```js
 tibia.character(name, callback)
 ```
-### Callback data
+#### Callback data
 
 `data` is a instance of **Character Object**.
 
@@ -46,7 +46,7 @@ tibia.character(name, callback)
 `data.characters`  *since `0.1.0`*  
 > Array with others characters from account (only if account isn't hide by owner)
 
-### Example
+#### Example
 
 ```js
 tibia.character('Hallsiny', function(data){
@@ -56,21 +56,22 @@ tibia.character('Hallsiny', function(data){
 ```
 
 
-## **world**
+## **.world()**
 ```js
 tibia.world(world, callback)
 ```
-### Callback data
+#### Callback data
 
 `data` is a instance of **World Object**.
 
 #### Properties
 
 `data.world` *since `0.1.1`*  
-Object with world info like status, location, pvp type, etc.
+> Object with world info like status, location, pvp type, etc.
 
 `data.playersOnline` *since `0.1.1`*  
-Array with objects of players online in world. Each player is an object with name, level and vocation properties.
+> Array with objects of players online in world.  
+> Each player is an object with name, level and vocation properties.
 
 #### Methods
 
@@ -78,21 +79,21 @@ Array with objects of players online in world. Each player is an object with nam
 > Check if player is online  
 
 `data.getPlayerBy(by, value)` *since `0.1.1`*  
-> Get first player with conditions. For more players, see filterPlayersBy
+> Get first player with conditions. For more players, see filterPlayersBy  
 > Example: `data.getPlayerBy('name', 'Hallsiny').level`
 
 `data.filterPlayersBy(by, value)` *since `0.1.1`*  
 > Filter playersOnline by name, level, vocation  
-> `value` must be string or array.
-> Example: `data.filterPlayersBy('vocation', 'None')`  
-> Or: `data.filterPlayersBy('vocation', ['Knight', 'Elite Knight'])`
+> `value` must be string or array.  
+> Example: `data.filterPlayersBy('vocation', 'None')`
+> Or: `data.filterPlayersBy('vocation', ['Knight', 'Elite Knight'])`  
 
 `data.sortPlayersByAsc(by)` *since `0.1.1`*  
-> ASC Sort playersOnline by name, level, vocation
+> ASC Sort playersOnline by name, level, vocation  
 > Example: `data.sortPlayersByAsc('level')`  
 
 `data.sortPlayersByDesc(by)` *since `0.1.1`*  
-> DESC Sort playersOnline by name, level, vocation  
+> DESC Sort playersOnline by name, level, vocation
 > Example: `data.sortPlayersByDesc('level')`
 
 
