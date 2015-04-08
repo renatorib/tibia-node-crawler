@@ -43,7 +43,7 @@ module.exports = function(body){
                 on: value.match(/\(.+\)/g)[0].replace('on ', '')
                       .replace(')', '')
                       .replace('(', '')
-              }
+              };
             break;
             case 'pvPType':
               key = 'pvpType';
@@ -69,4 +69,4 @@ module.exports = function(body){
     });
 
   return WorldParser;
-}
+};

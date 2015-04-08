@@ -15,4 +15,4 @@ module.exports = function(name, callback){
     .setParser(moduleManager.loadParser('character'))
     .setCallback(callback)
     .request();
-}
+};

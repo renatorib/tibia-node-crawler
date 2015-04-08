@@ -19,7 +19,7 @@ function Parser(body){
 Parser.prototype.setData = function(data){
   this.data = data;
   return this;
-}
+};
 
 /**
  * Parser setParser
@@ -29,7 +29,7 @@ Parser.prototype.setData = function(data){
 Parser.prototype.setParser = function(parser){
   this.parser = parser;
   return this;
-}
+};
 
 /**
  * Parser setError
@@ -39,7 +39,7 @@ Parser.prototype.setParser = function(parser){
 Parser.prototype.setError = function(error){
   this.error = error;
   return this;
-}
+};
 
 /**
  * Parser parse
@@ -48,8 +48,10 @@ Parser.prototype.setError = function(error){
 
 Parser.prototype.parse = function(){
   this.parser();
-  if(this.error) this.data['error'] = this.error;
+  if(this.error) {
+    this.data.error = this.error;
+  }
   return this.data;
-}
+};
 
 module.exports = Parser;

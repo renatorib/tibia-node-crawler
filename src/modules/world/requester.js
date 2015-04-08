@@ -15,4 +15,4 @@ module.exports = function(world, callback){
     .setParser(moduleManager.loadParser('world'))
     .setCallback(callback)
     .request();
-}
+};

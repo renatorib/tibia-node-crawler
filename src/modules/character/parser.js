@@ -52,8 +52,9 @@ module.exports = function(body){
             secret: $(td[2]).find('img').length === 1
           };
 
-          if(achievement.name !== '')
+          if(achievement.name !== '') {
             self.data.achievements.push(achievement);
+          }
         });
 
       wrap('Character Deaths')

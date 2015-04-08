@@ -24,17 +24,19 @@ function Requester() {
   this.callback = function(){};
 
   this.callbackWrapper = function(err, res, body) {
-    if(err)
+    if(err) {
       throw new Error('Requester ' + self.name +  ' from path ' + self.url + self.path + ' failed: ' + err);
+    }
     var data = self.Parser(body).parse();
-    if(_.isFunction(self.callback))
+    if(_.isFunction(self.callback)) {
       return self.callback(data);
+    }
     return data;
   };
 
   return this;
 
-};
+}
 
 /**
  * Requester setName
@@ -148,7 +150,7 @@ Requester.prototype.request = function(){
     method: this.method.toUpperCase(),
     headers: this.headers
   };
-  if(options.method == 'GET') {
+  if(options.method === 'GET') {
     options.url = options.url + better.serialize(this.data);
     options.form = {};
   }

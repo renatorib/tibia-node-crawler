@@ -7,7 +7,7 @@ var aliasSettings = {
         '@globals': './src/globals/',
         '@modules': './src/modules/'
     }
-}
+};
 global.alias = new _alias(aliasSettings);
 
 // Module Manager
