@@ -1,5 +1,6 @@
 /* global alias: true */
 /* global moduleManager: true */
+/* global Parser: true */
 
 var better = alias.require('@libs/better');
 var World = moduleManager.loadObject('world');
@@ -32,7 +33,7 @@ module.exports = function(body){
 
           switch(key){
             case 'status':
-              self.data.world['online'] = value === 'Online';
+              self.data.world.online = value === 'Online';
             break;
             case 'playersOnline':
               value = better.int(value);
