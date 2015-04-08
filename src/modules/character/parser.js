@@ -65,7 +65,7 @@ module.exports = function(body){
             date: $(td[0]).text(),
             level: better.int($(td[1]).text()),
             by: better.deathBy($(td[1]).text())
-          }
+          };
 
           self.data.deaths.push(death);
         });
@@ -96,4 +96,4 @@ module.exports = function(body){
     });
 
   return CharacterParser;
-}
+};
