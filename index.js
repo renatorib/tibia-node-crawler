@@ -1,3 +1,7 @@
+/* global alias: true */
+/* global _: true */
+/* global moduleManager: true */
+
 // Alias
 var _alias = require('require-alias');
 var aliasSettings = {

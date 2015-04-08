@@ -1,3 +1,5 @@
+/* global _: true */
+
 /**
  * World Object
  */

@@ -1,3 +1,5 @@
+/* global _: true */
+
 var better = {};
 
 /**
@@ -30,10 +32,12 @@ better.value = function(value){
 
 better.int = function(value){
   value = value.match(/[0-9]+/g);
-  if(_.isArray(value) && value.length > 1)
+  if(_.isArray(value) && value.length > 1) {
     value.join('');
-  if(_.isArray(value) && value.length === 1)
+  }
+  if(_.isArray(value) && value.length === 1) {
     value = value[0];
+  }
   return parseInt(value);
 };
 

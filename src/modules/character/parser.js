@@ -1,3 +1,6 @@
+/* global alias: true */
+/* global moduleManager: true */
+
 var better = alias.require('@libs/better');
 var Character = moduleManager.loadObject('character');
 
