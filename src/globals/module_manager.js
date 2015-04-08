@@ -1,3 +1,5 @@
+/* global alias: true */
+
 var fs = require('fs');
 
 /**

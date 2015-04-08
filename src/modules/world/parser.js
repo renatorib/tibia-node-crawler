@@ -1,3 +1,7 @@
+/* global alias: true */
+/* global moduleManager: true */
+/* global Parser: true */
+
 var better = alias.require('@libs/better');
 var World = moduleManager.loadObject('world');
 
@@ -29,7 +33,7 @@ module.exports = function(body){
 
           switch(key){
             case 'status':
-              self.data.world['online'] = value === 'Online';
+              self.data.world.online = value === 'Online';
             break;
             case 'playersOnline':
               value = better.int(value);
@@ -43,7 +47,7 @@ module.exports = function(body){
                 on: value.match(/\(.+\)/g)[0].replace('on ', '')
                       .replace(')', '')
                       .replace('(', '')
-              }
+              };
             break;
             case 'pvPType':
               key = 'pvpType';
@@ -69,4 +73,4 @@ module.exports = function(body){
     });
 
   return WorldParser;
-}
+};

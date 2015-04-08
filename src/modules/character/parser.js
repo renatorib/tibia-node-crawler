@@ -1,3 +1,7 @@
+/* global alias: true */
+/* global moduleManager: true */
+/* global Parser: true */
+
 var better = alias.require('@libs/better');
 var Character = moduleManager.loadObject('character');
 
@@ -52,8 +56,9 @@ module.exports = function(body){
             secret: $(td[2]).find('img').length === 1
           };
 
-          if(achievement.name !== '')
+          if(achievement.name !== '') {
             self.data.achievements.push(achievement);
+          }
         });
 
       wrap('Character Deaths')
@@ -64,7 +69,7 @@ module.exports = function(body){
             date: $(td[0]).text(),
             level: better.int($(td[1]).text()),
             by: better.deathBy($(td[1]).text())
-          }
+          };
 
           self.data.deaths.push(death);
         });
@@ -95,4 +100,4 @@ module.exports = function(body){
     });
 
   return CharacterParser;
-}
+};

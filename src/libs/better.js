@@ -1,3 +1,5 @@
+/* global _: true */
+
 var better = {};
 
 /**
@@ -10,7 +12,7 @@ better.key = function(value){
     .replace(String.fromCharCode(58), '')
     .replace(String.fromCharCode(160), String.fromCharCode(32));
   return _.camelCase(value);
-}
+};
 
 /**
  * Better value
@@ -21,7 +23,7 @@ better.value = function(value){
   return value
     .replace(String.fromCharCode(160), String.fromCharCode(32))
     .trim();
-}
+};
 
 /**
  * Better int
@@ -30,12 +32,14 @@ better.value = function(value){
 
 better.int = function(value){
   value = value.match(/[0-9]+/g);
-  if(_.isArray(value) && value.length > 1)
+  if(_.isArray(value) && value.length > 1) {
     value.join('');
-  if(_.isArray(value) && value.length === 1)
+  }
+  if(_.isArray(value) && value.length === 1) {
     value = value[0];
+  }
   return parseInt(value);
-}
+};
 
 /**
  * Better url
@@ -47,7 +51,7 @@ better.url = function(value){
     .replace(' ', '+')
     .replace('%20', '+')
     .replace('%2B', '+');
-}
+};
 
 /**
  * Better serialize
@@ -58,11 +62,11 @@ better.serialize = function(obj){
   var serialized = Object.keys(obj)
     .reduce(function(a, k){
       a.push(k + '=' + encodeURIComponent(obj[k]));
-      return a
+      return a;
     },[])
     .join('&');
   return '?' + serialized.replace('%2B', '+');
-}
+};
 
 /**
  * Better deathBy
@@ -79,7 +83,7 @@ better.deathBy = function(value){
     .replace(' and ',', ')
     .trim()
     .split(', ');
-}
+};
 
 
 module.exports = better;

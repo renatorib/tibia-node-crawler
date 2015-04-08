@@ -1,3 +1,7 @@
+/* global alias: true */
+/* global Requester: true */
+/* global moduleManager: true */
+
 var better = alias.require('@libs/better');
 
 /**
@@ -15,4 +19,4 @@ module.exports = function(name, callback){
     .setParser(moduleManager.loadParser('character'))
     .setCallback(callback)
     .request();
-}
+};
