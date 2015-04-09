@@ -6,10 +6,10 @@
 var _alias = require('require-alias');
 var aliasSettings = {
     aliases: {
-        '@root': './src/',
-        '@libs': './src/libs/',
-        '@globals': './src/globals/',
-        '@modules': './src/modules/'
+        '@root': 'src/',
+        '@libs': 'src/libs/',
+        '@globals': 'src/globals/',
+        '@modules': 'src/modules/'
     }
 };
 global.alias = new _alias(aliasSettings);
