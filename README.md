@@ -1,9 +1,17 @@
-# Install
+# Tibia Node Crawler
+A node.js crawler module to get tibia.com parsed data, like character data, world data, highscores data and more.  
+
+## Why?
+Simple, tibia doesn't have a public api.  
+If you work in CipSoft, read it out loud: **WE NEED AN API**  
+Thanks!
+
+## Install via npm
 ```
 npm install tibia-node-crawler --save
 ```
 
-# Basic Usage
+## Basic Usage
 ```js
 var tibia = require('tibia-node-crawler');
 
@@ -18,26 +26,29 @@ tibia.character('Hallsiny', function(data){
 
 ```
 
-# API Documentation
+## API Reference
 
-## Summary
+### Summary
 
-* [.character()](#character)
-  * [Properties](#properties)
-* [.world()](#world)
-  * [Properties](#properties-1)
-  * [Methods](#methods)
+* [character()](#character)
+  * [Character Object](#character-object)
+* [world()](#world)
+  * [World Object](#world-object)
 
 
-## **.character()**
+### **character()**
 ```js
 tibia.character(name, callback)
 ```
-#### Callback data
-
+#### Callback
+```js
+callback = function(data){}
+```
 `data` is a instance of **Character Object**.
 
-#### Properties
+#### Character Object
+
+##### Properties
 
 `data.character` *since `0.1.0`*
 > Object with character info like level, vocation, world, residence, comment, etc.
@@ -54,6 +65,9 @@ tibia.character(name, callback)
 `data.characters`  *since `0.1.0`*  
 > Array with others characters from account (only if account isn't hide by owner)
 
+##### Methods
+> No methods
+
 #### Example
 
 ```js
@@ -64,15 +78,19 @@ tibia.character('Hallsiny', function(data){
 ```
 
 
-## **.world()**
+### **world()**
 ```js
 tibia.world(world, callback)
 ```
-#### Callback data
-
+#### Callback
+```js
+callback = function(data){}
+```
 `data` is a instance of **World Object**.
 
-#### Properties
+#### Character Object
+
+##### Properties
 
 `data.world` *since `0.1.1`*  
 > Object with world info like status, location, pvp type, etc.
@@ -81,7 +99,7 @@ tibia.world(world, callback)
 > Array with objects of players online in world.  
 > Each player is an object with name, level and vocation properties.
 
-#### Methods
+##### Methods
 
 `data.isPlayerOnline(name)` *since `0.1.1`*  
 > Check if player is online  
@@ -105,7 +123,7 @@ tibia.world(world, callback)
 > Example: `data.sortPlayersByDesc('level')`
 
 
-### Example
+#### Example
 
 ```js
 tibia.world('Fidera', function(data){
@@ -117,7 +135,7 @@ tibia.world('Fidera', function(data){
 }
 ```
 
-# Contributing
+## Contributing
 
 If you like to contribute, you can create new modules with this grunt task:
 ```
@@ -131,10 +149,11 @@ modules/
     ├── parser.js
     └── object.js
 ```
+Create a new branch named 'mod-module' and do a pull request.
 
-## Modules
+### Modules
 
-### requester.js
+#### requester.js
 
 > This file is responsible for the request to the tibia.com page, and retrive your html content.
 
@@ -162,7 +181,7 @@ module.exports = function(name, callback){
 `.setCallback()` set a callback passed from user
 `.request()` execute the request
 
-### parser.js
+#### parser.js
 
 > This file is responsible for the parse the html content from requester. We use cheerio to scrap the html.
 
@@ -193,7 +212,7 @@ module.exports = function(body){
 `.setData()` set a instance of object.js, which means that callback will return this object  
 `.setParser()` here go a function that handle with a data extraction from returned html. this.$ is a cheerio instance, jquery-like: this.$('#el').text(), will extract the text from element #el, like jQuery.  
 
-### object.js
+#### object.js
 
 > This file is responsible for object that callback will return
 
@@ -226,7 +245,7 @@ Foo.prototype.myMethod = function(arg1, arg2){
 module.exports = MyObject;
 ```
 
-# License: MIT
+## License: MIT
 
 Copyright © 2015 Renato Ribeiro <ola@rena.to>
 
