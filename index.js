@@ -2,26 +2,14 @@
 /* global _: true */
 /* global moduleManager: true */
 
-// Alias
-var _alias = require('require-alias');
-var aliasSettings = {
-    aliases: {
-        '@root': 'src/',
-        '@libs': 'src/libs/',
-        '@globals': 'src/globals/',
-        '@modules': 'src/modules/'
-    }
-};
-global.alias = new _alias(aliasSettings);
-
 // Module Manager
-global.moduleManager = alias.require('@globals/module_manager');
+global.moduleManager = require('./src/globals/module_manager');
 
 // Parser
-global.Parser = alias.require('@globals/parser');
+global.Parser = require('./src/globals/parser');
 
 // Requester
-global.Requester = alias.require('@globals/requester');
+global.Requester = require('./src/globals/requester');
 
 // Lodash
 global._ = require('lodash');

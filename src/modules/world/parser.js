@@ -2,7 +2,7 @@
 /* global moduleManager: true */
 /* global Parser: true */
 
-var better = alias.require('@libs/better');
+var better = require('../../libs/better');
 var World = moduleManager.loadObject('world');
 
 /**

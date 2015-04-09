@@ -1,6 +1,7 @@
 /* global alias: true */
 
 var fs = require('fs');
+var path = require('path');
 
 /**
  * Module Manager loadParser
@@ -8,7 +9,7 @@ var fs = require('fs');
  */
 
 exports.loadParser = function(name){
-  return alias.require('@modules/' + name + '/parser');
+  return require('../modules/' + name + '/parser');
 };
 
 /**
@@ -17,7 +18,7 @@ exports.loadParser = function(name){
  */
 
 exports.loadObject = function(name){
-  return alias.require('@modules/' + name + '/object');
+  return require('../modules/' + name + '/object');
 };
 
 
@@ -27,7 +28,7 @@ exports.loadObject = function(name){
  */
 
 exports.loadRequester = function(name){
-  return alias.require('@modules/' + name + '/requester');
+  return require('../modules/' + name + '/requester');
 };
 
 /**
@@ -36,11 +37,11 @@ exports.loadRequester = function(name){
  */
 
 exports.exportAll = function(){
-  var list = fs.readdirSync('src/modules');
+  var list = fs.readdirSync(path.resolve(__dirname + '/../modules'));
   var output = {};
   var self = this;
   list.forEach(function(name){
-    var moduleContent = fs.statSync('src/modules/' + name);
+    var moduleContent = fs.statSync(path.resolve(__dirname + '/../modules/' + name));
     if(moduleContent.isDirectory()){
       output[name] = self.loadRequester(name);
     }

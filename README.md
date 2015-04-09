@@ -200,11 +200,11 @@ module.exports = function(body){
 This is a character object:
 ```js
 function Character(){
-  this.character: {},
-  this.achievements: [],
-  this.deaths: [],
-  this.account: {},
-  this.characters: []
+  this.character = {};
+  this.achievements = [];
+  this.deaths = [];
+  this.account = {};
+  this.characters = [];
 }
 
 module.exports = Character;

@@ -2,7 +2,7 @@
 /* global Requester: true */
 /* global moduleManager: true */
 
-var better = alias.require('@libs/better');
+var better = require('../../libs/better');
 
 /**
  * Character Requester
