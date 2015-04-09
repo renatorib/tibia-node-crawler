@@ -1,4 +1,5 @@
-var better = alias.require('@libs/better');
+/* global Requester: true */
+/* global moduleManager: true */
 
 /**
  * World Requester
@@ -15,4 +16,4 @@ module.exports = function(world, callback){
     .setParser(moduleManager.loadParser('world'))
     .setCallback(callback)
     .request();
-}
+};
