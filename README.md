@@ -88,7 +88,7 @@ callback = function(data){}
 ```
 `data` is a instance of **World Object**.
 
-#### Character Object
+#### World Object
 
 ##### Properties
 
