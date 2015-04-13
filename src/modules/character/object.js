@@ -3,10 +3,10 @@
  */
 
 function Character(){
-  this.character = {},
-  this.achievements = [],
-  this.deaths = [],
-  this.account = {},
+  this.character = {};
+  this.achievements = [];
+  this.deaths = [];
+  this.account = {};
   this.characters = [];
 }
 
