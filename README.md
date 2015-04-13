@@ -1,4 +1,4 @@
-# Tibia Node Crawler
+# Tibia Node Crawler [![Code Climate](https://codeclimate.com/github/tibialand/tibia-node-crawler/badges/gpa.svg)](https://codeclimate.com/github/tibialand/tibia-node-crawler)
 A node.js crawler module to get tibia.com parsed data, like character data, world data, highscores data and more.  
 
 ## Why?
