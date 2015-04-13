@@ -7,7 +7,7 @@ function Character(){
   this.achievements = [],
   this.deaths = [],
   this.account = {},
-  this.characters = []
+  this.characters = [];
 }
 
 module.exports = Character;

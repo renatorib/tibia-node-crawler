@@ -1,4 +1,3 @@
-/* global alias: true */
 /* global _: true */
 
 var request = require('request');

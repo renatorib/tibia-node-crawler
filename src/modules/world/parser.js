@@ -1,4 +1,3 @@
-/* global alias: true */
 /* global moduleManager: true */
 /* global Parser: true */
 
