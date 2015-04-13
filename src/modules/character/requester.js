@@ -1,4 +1,3 @@
-/* global alias: true */
 /* global Requester: true */
 /* global moduleManager: true */
 
