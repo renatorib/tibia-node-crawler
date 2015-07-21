@@ -155,7 +155,7 @@ Create a new branch named 'mod-module' and do a pull request.
 
 #### requester.js
 
-> This file is responsible for the request to the tibia.com page, and retrive your html content.
+> This file is responsible for the request to the tibia.com page, and retrieve your html content.
 
 This is a character requester:
 ```js
@@ -238,7 +238,7 @@ function MyObject(){
   // ...
 }
 
-Foo.prototype.myMethod = function(arg1, arg2){
+MyObject.prototype.myMethod = function(arg1, arg2){
   // ...
 }
 
