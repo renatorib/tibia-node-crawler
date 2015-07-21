@@ -120,8 +120,8 @@ callback = function(data){}
 > Example: `data.sortPlayersByAsc('level')`  
 
 `data.sortPlayersByDesc(by)` *since `0.1.1`*  
-> DESC Sort playersOnline by name, level, vocation
-> Example: `data.sortPlayersByDesc('level')`
+> DESC Sort playersOnline by name, level, vocation  
+> Example: `data.sortPlayersByDesc('level')`  
 
 
 #### Example
@@ -141,7 +141,7 @@ tibia.world('Fidera', function(data){
 ```js
 tibia.highscores(world, skill, page, callback)
 ```
-> skill can be experience, magic, shielding, distance, sword, club, axe, first, fishing, achievements or loyalty
+> skill can be experience, magic, shielding, distance, sword, club, axe, first, fishing, achievements or loyalty  
 > page starts at 0 and goes up to 11 (0 = \#1 to \#25, 1 = \#26 to \#50, ..., 11 = \#276 to \#300)
 
 #### Callback
@@ -156,21 +156,21 @@ callback = function(data){}
 
 `data.highscores` *since `0.1.3`*  
 > Array with objects of players in highscore list.  
-> Each player is an object with rank, name and level/points/title depending on the skill.
+> Each player is an object with rank, name and level/points/title depending on the skill.  
 
 ##### Methods
 
 `data.getByRank(number)` *since `0.1.3`*  
-> Get player by rank number
-> Example: `data.getByRank(1)`
-> Example usage case: find player from nth position
-> → return Object, or undefined if does not found
+> Get player by rank number  
+> Example: `data.getByRank(1)`  
+> Example usage case: find player from nth position  
+> → return Object, or undefined if does not found  
 
 `data.getByName(name)` *since `0.1.3`*  
-> Get player by player name
-> Example: `data.getByName('Kharsek')`
-> Example usage case: discover someone's rank position.
-> → return Object, or undefined if does not found
+> Get player by player name  
+> Example: `data.getByName('Kharsek')`  
+> Example usage case: discover someone's rank position.  
+> → return Object, or undefined if does not found  
 
 #### Example
 
