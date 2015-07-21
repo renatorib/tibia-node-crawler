@@ -34,7 +34,8 @@ tibia.character('Hallsiny', function(data){
   * [Character Object](#character-object)
 * [world()](#world)
   * [World Object](#world-object)
-
+* [highscores()](#highscores)
+  * [Highscores Object](#highscores-object)
 
 ### **character()**
 ```js
@@ -72,8 +73,8 @@ callback = function(data){}
 
 ```js
 tibia.character('Hallsiny', function(data){
-	console.log(data.character.world) //Fidera
-	console.log(data.account.created) //Dec 03 2008, 21:48:54 CET
+	console.log(data.character.world); //Fidera
+	console.log(data.account.created); //Dec 03 2008, 21:48:54 CET
 }
 ```
 
@@ -127,11 +128,64 @@ callback = function(data){}
 
 ```js
 tibia.world('Fidera', function(data){
-	console.log(data.world.pvpType) // Optional PVP
-    console.log(data.world.worldQuestTitles) // ['Bewitched', ...]
-	console.log(data.playersOnline) // [{}, {}, ...]
-	console.log(data.isPlayerOnline('Hallsiny')) // true or false
-    console.log(data.filterPlayersBy('vocation', ['Knight', 'Elite Knight'])) // [{}, {}, ...]
+	console.log(data.world.pvpType); // Optional PVP
+  console.log(data.world.worldQuestTitles); // ['Bewitched', ...]
+	console.log(data.playersOnline); // [{}, {}, ...]
+	console.log(data.isPlayerOnline('Hallsiny')); // true or false
+  console.log(data.filterPlayersBy('vocation', ['Knight', 'Elite Knight'])); // [{}, {}, ...]
+}
+```
+
+
+### **highscores()**
+```js
+tibia.highscores(world, skill, page, callback)
+```
+> skill can be experience, magic, shielding, distance, sword, club, axe, first, fishing, achievements or loyalty
+> page starts at 0 and goes up to 11 (0 = \#1 to \#25, 1 = \#26 to \#50, ..., 11 = \#276 to \#300)
+
+#### Callback
+```js
+callback = function(data){}
+```
+`data` is a instance of **Highscores Object**.
+
+#### Highscores Object
+
+##### Properties
+
+`data.highscores` *since `0.1.3`*  
+> Array with objects of players in highscore list.  
+> Each player is an object with rank, name and level/points/title depending on the skill.
+
+##### Methods
+
+`data.getByRank(number)` *since `0.1.3`*  
+> Get player by rank number
+> Example: `data.getByRank(1)`
+> Example usage case: find player from nth position
+> → return Object, or undefined if does not found
+
+`data.getByName(name)` *since `0.1.3`*  
+> Get player by player name
+> Example: `data.getByName('Kharsek')`
+> Example usage case: discover someone's rank position.
+> → return Object, or undefined if does not found
+
+#### Example
+
+```js
+tibia.highscores('Fidera', 'experience', 0, function(data){
+	console.log(data.highscores); // Array
+	console.log(data.getByRank(1).name); // Nini (until now)
+	console.log(data.getByRank(1).level); // 750 (until now)
+}
+```
+
+```js
+tibia.highscores('Fidera', 'magic', 11, function(data){
+	console.log(data.highscores);
+	console.log(data.getByRank(300).name);
 }
 ```
 
@@ -149,7 +203,7 @@ modules/
     ├── parser.js
     └── object.js
 ```
-Create a new branch named 'mod-module' and do a pull request.
+Create a new branch named 'mod-modulename' and do a pull request.
 
 ### Modules
 
