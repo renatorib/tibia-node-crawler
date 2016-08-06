@@ -9,8 +9,8 @@ var better = {};
 
 better.key = function(value){
   value = value
-    .replace(String.fromCharCode(58), '')
-    .replace(String.fromCharCode(160), String.fromCharCode(32));
+    .replace(new RegExp(String.fromCharCode(58), 'g'), '')
+    .replace(new RegExp(String.fromCharCode(160), 'g'), String.fromCharCode(32));
   return _.camelCase(value);
 };
 
@@ -21,7 +21,7 @@ better.key = function(value){
 
 better.value = function(value){
   return value
-    .replace(String.fromCharCode(160), String.fromCharCode(32))
+    .replace(new RegExp(String.fromCharCode(160), 'g'), String.fromCharCode(32))
     .trim();
 };
 
